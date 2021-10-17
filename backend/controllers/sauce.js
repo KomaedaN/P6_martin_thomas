@@ -5,7 +5,7 @@ exports.createThing =  (req, res, next) => {
     const thing = new Thing({
       ...req.body
     });
-    thing.save()
+    Thing.save()
       .then(() => res.status(201).json({ message: 'Objet enregistré !'}))
       .catch(error => res.status(400).json({ error }));
 };
